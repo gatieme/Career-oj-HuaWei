@@ -9,6 +9,25 @@
 #include <stdlib.h>
 #include <string.h>
 
+
+//  调试开关
+#define DEBUG
+
+
+#ifdef DEBUG
+
+#define debug       cout
+#define dprintf     printf
+
+#else
+
+#define debug       0 && cout
+#define dprintf     0 && printf
+
+#endif // DEBUG
+
+
+
 int findword(const char *pch)
 {
         char *p = (char *)pch;
@@ -39,14 +58,16 @@ int findword(const char *pch)
 #define SIZE 100
 int main()
 {
-    int         length;
-    char        str[SIZE];
+        //freopen("in.txt", "r", stdin);
+        //freopen("out.txt", "w", stdout);
+        int         length;
+        char        str[SIZE];
 
-    while(gets(str) != NULL)
-    {
-        length = findword(str);
-        printf("%d\n", length);
-    }
+        while(gets(str) != NULL)
+        {
+                length = findword(str);
+                printf("%d\n", length);
+        }
 
-    return EXIT_SUCCESS;
+        return EXIT_SUCCESS;
 }
