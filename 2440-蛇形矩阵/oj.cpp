@@ -1,40 +1,20 @@
-#include<iostream>
-#include<string>
-#include<iomanip>
-#include<algorithm>
-
-#include <fstream>
-
+#include <iostream>
 using namespace std;
-
-//  调试开关
-#define DEBUG
-
-
-#ifdef DEBUG
-
-#define debug       cout
-#define dprintf     printf
-
-#else
-
-#define debug       0 && cout
-#define dprintf     0 && printf
-
-#endif // DEBUG
-
-
-int main( )
+int main()
 {
-    ifstream fin("in.txt");  
-    streambuf *cinbackup = cin.rdbuf(fin.rdbuf());
-    //ofstream fout("out.txt");  
-    //streambuf *coutbackup = cout.rdbuf(fout.rdbuf()); 
-    int a, b;
-    cin >>a >>b;
+    int y,x;
+    int n;
 
-    cout <<a <<b <<endl;
-
-
+    while(cin>>n)
+    {
+        for(y=1; y<=n; y++)
+        {
+            for(x=1; x<=n-y; x++)
+                cout<<((x+y-1)*(x+y-1)+(x+y-1))/2-y+1<<" ";
+            x=n-y+1;
+            cout<<((x+y-1)*(x+y-1)+(x+y-1))/2-y+1;
+            cout<<endl;
+        }
+    }
     return 0;
 }

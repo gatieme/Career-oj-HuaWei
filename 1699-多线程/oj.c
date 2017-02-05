@@ -24,10 +24,8 @@
 
 int main( )
 {
-#ifdef DEBUG
     freopen("in.txt", "r", stdin);
     //freopen("out.txt", "w", stdout);
-#endif
 
     int a, b;
     while(scanf("%d%d", &a, &b) != EOF)

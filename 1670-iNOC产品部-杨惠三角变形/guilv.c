@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <string.h>
 
 
 //  调试开关
@@ -29,12 +29,28 @@ int main( )
     //freopen("out.txt", "w", stdout);
 #endif
 
-    int a, b;
-    while(scanf("%d%d", &a, &b) != EOF)
+    int num;
+    int ret;
+    scanf("%d", &num);
+
+    if (num == 1 || num == 2)
     {
-        printf("%d\n", a + b);
+        ret = -1;
+    }
+    else if (num%2==1)
+    {
+        ret = 2;
+    }
+    else if (num % 4 == 0)
+    {
+        ret = 3;
+    }
+    else if (num % 4 ==2)
+    {
+        ret = 4;
     }
 
+    printf("%d\n", ret);
 
-    return 0;
+    return EXIT_SUCCESS;
 }

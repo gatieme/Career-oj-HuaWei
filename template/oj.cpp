@@ -26,10 +26,14 @@ using namespace std;
 
 int main( )
 {
-    ifstream fin("in.txt");  
+#ifdef DEBUG
+    ifstream fin("in.txt");
     streambuf *cinbackup = cin.rdbuf(fin.rdbuf());
-    //ofstream fout("out.txt");  
-    //streambuf *coutbackup = cout.rdbuf(fout.rdbuf()); 
+    //ofstream fout("out.txt");
+    //streambuf *coutbackup = cout.rdbuf(fout.rdbuf());
+#endif
+
+
     int a, b;
     cin >>a >>b;
 
